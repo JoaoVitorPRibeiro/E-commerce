@@ -82,6 +82,58 @@ div {
 }
 
 `
+export const CartProductArea = styled.div`
+    display: column;
+    justify-content: space-between;
+
+
+div {
+    height: 150px;
+    width: 1400px;
+    border: 1px solid rgb(194,193,193);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-left: 25px;
+
+    button {
+        font-size: 25px;
+        background-color: transparent;
+        border: none;
+        color: red;
+    }
+}
+`
+export const PurchaseSummary = styled.div`
+    display: flex;
+    justify-content: center;
+
+
+div {
+    height: 275px;
+    width: 300px;
+    border: 1px solid rgb(194,193,193);
+    display: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    button {
+        height: 50px;
+        width: 150px;
+        font-size: 15px;
+        background-color: red;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+}
+`
 export const FooterArea = styled.div`
 display: flex;
 gap: 5px;

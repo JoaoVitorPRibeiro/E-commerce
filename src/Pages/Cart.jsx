@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getItem, setItem } from "../services/LocalStorageFuncs";
 import { BsFillCartDashFill, BsSearch, BsCart } from 'react-icons/bs'
 import { Link } from "react-router-dom";
-import { HeaderArea, ProductArea, LinksArea, FooterArea } from "./Storestyle";
+import { HeaderArea, CartProductArea, LinksArea, FooterArea, PurchaseSummary } from "./Storestyle";
 
 export const Cart = () => {
     const [data, setData] = useState( getItem('carrinhoTs') || [])
@@ -15,6 +15,8 @@ export const Cart = () => {
 
   
     const subTotal = data.reduce((acc, cur) => acc + cur.price,0)
+    const Total = data.reduce((e, subTotal) => subTotal - e.discount,subTotal)
+
 
     return(
         <div> 
@@ -48,8 +50,7 @@ export const Cart = () => {
              </ul>
                  </LinksArea>
                  <h1>Carrinho de Compras</h1>
-            <h3>{`SubTotal: R$ ${subTotal}`} </h3>
-            <ProductArea>
+            <CartProductArea>
                 {
                     data.map((e) => (
                         <div key={e.id}>
@@ -64,7 +65,18 @@ export const Cart = () => {
                         </div>
                     ))
                 }
-            </ProductArea>
+            </CartProductArea>
+            <PurchaseSummary>
+                    <div>
+                    <h2>Resumo da compra </h2>
+            <h3>{`SubTotal: R$ ${subTotal}`} </h3>
+            <h3>Desconto: R$ - </h3>
+            <h3>{`Total: R$ ${Total}`} </h3>
+            <button 
+            onClick={() => console.log('Compra Finalizada')}
+            > Finalizar compra </button>
+                </div>
+                </PurchaseSummary>
             <FooterArea>
             <div>
         <img src="https://spacentauro-a.akamaihd.net/assets/logo-centauro-header2.0.svg" alt="Centauro"/>
