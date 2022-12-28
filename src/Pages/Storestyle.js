@@ -86,6 +86,12 @@ export const CartProductArea = styled.div`
     display: column;
     justify-content: space-between;
 
+    section {
+        display: flex;
+        justify-content: space-between;
+        margin-left:850px;
+        margin-right: 150px;
+    }
 
 div {
     height: 150px;
@@ -105,6 +111,12 @@ div {
         border: none;
         color: red;
     }
+
+    input {
+        height: 15px;
+        width: 40px;
+    }
+
 }
 `
 export const PurchaseSummary = styled.div`
