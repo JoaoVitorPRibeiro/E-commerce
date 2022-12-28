@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const HeaderArea = styled.div`
 display: flex;
@@ -39,9 +39,19 @@ ul {
     display: flex;
     gap: 30px;
     margin-bottom: 25px;
+    cursor:pointer;
 }
-
 `
+export const BannerArea = styled.div`
+img {
+    height:200px;
+    width: 1450px;
+    border-radius: 40px;
+    cursor:pointer;
+}
+`
+
+
 export const ProductArea = styled.div`
 display: flex;
 gap: 50px;
@@ -50,15 +60,7 @@ justify-content: center;
 align-items: center;
 margin-bottom: 75px;
 
-div {
-    height: 320px;
-    width: 250px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-}
+
 div {
     height: 320px;
     width: 230px;
@@ -75,9 +77,21 @@ div {
         border: none;
         color: red;
     }
+
+    
 }
 
+`
+export const FooterArea = styled.div`
+display: flex;
+gap: 5px;
+background-color: rgb(190, 190, 190);
+justify-content: center;
 
-
-
+img {
+    height: 100px;
+    width: 150px;
+    background-color: transparent;
+    margin-right: 80px;
+}
 `

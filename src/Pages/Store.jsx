@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BsFillCartCheckFill, BsFillCartPlusFill, BsSearch, BsCart } from 'react-icons/bs'
 import { getItem, setItem } from "../services/LocalStorageFuncs";
 import { Link } from "react-router-dom";
-import { HeaderArea, ProductArea, LinksArea } from "./Storestyle";
+import { HeaderArea, ProductArea, LinksArea, FooterArea, BannerArea } from "./Storestyle";
 
 export const Store = () =>{
 
@@ -62,13 +62,16 @@ export const Store = () =>{
                 <li> Outlet </li>
              </ul>
                  </LinksArea>
+                 <BannerArea>
+                    <img src="https://imgcentauro-a.akamaihd.net/04_Email/2023/Leve%20Tudo/Primaria/Centauro_Desk_1400x400.jpg" alt="Banner" />
+                 </BannerArea>
                  <h1>Calçados</h1>
                  <ProductArea>      
             {
                 data.map((e) => (
                     <div key={e.id} className='products'>
-                        <h4>{e.title} </h4>
                         <img src={e.thumbnail} alt=''/>
+                        <h4>{e.title} </h4>
                         <h4>R$ {e.price} </h4>
                         <button 
                         onClick={() => handleClick(e)}
@@ -85,6 +88,11 @@ export const Store = () =>{
                 ))
             }
         </ProductArea>
+        <FooterArea>
+            <div>
+        <img src="https://spacentauro-a.akamaihd.net/assets/logo-centauro-header2.0.svg" alt="Centauro"/>
+            </div>
+        </FooterArea>
     </div>
     )
 }
